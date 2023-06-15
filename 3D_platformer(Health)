@@ -1,0 +1,19 @@
+//Health code
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Coin : MonoBehaviour
+{
+    void OnTriggerEnter(Collider other) {
+
+        CoinsCount coins = other.GetComponent<CoinsCount>();
+
+        //Количество монеток обновляется
+        coins.CollectCoins();
+
+        //Монетка, которую собрали, уничтожается
+        Destroy(gameObject);
+    }
+
+}
